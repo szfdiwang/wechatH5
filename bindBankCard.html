@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>绑定银行卡</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/conmm.js"></script>
+    <script type="text/javascript" src="js/WechatPublic.js"></script>
+    <script type="text/javascript" src="js/bindBank.js"></script>
+    <script>
+        // 当前页面跳转上一页
+    
+        $(".bar_nav i img").on('click', function () {
+    
+            window.history.back(-1);
+    
+        });
+    </script>
+</head>
+
+<body id="bgf0">
+    <div class="shade_layer">
+
+    </div>
+    <div class="shade_inside_layer">
+        <img src="images/loading.gif">
+        <span>加载中, 请稍后...</span>
+    </div>
+    <div class="bar_nav">
+        <i>
+            <img src="images/icon_40x40_6@2x.png">
+        </i> 绑定银行卡
+    </div>
+    <div class="bankCardTips">
+        <span>为签约认证支付协议,请绑定银行卡</span>
+    </div>
+    <div class="card_box">
+        <div class="card_detail">
+            <div class="bank_icon"></div>
+            <div id="bankName">银行类别</div>
+            <div id="cardNum" class="card_num"><span>银行卡号</span></div>
+            <div id="cardDate" class="bind_date"><span>添加日期</span></div>
+        </div>
+        <div class="bindBank">
+            <div class="card_input"><input type="text" id="bindBankCusName" class="input_font" readonly="readonly"><i
+                    class="red_require">*</i></div>
+            <div class="card_input"><input type="text" id="input_carNum" class="input_font" placeholder="请输入银行卡号"
+                    onkeyup="takeBankCardFn(this)" onkeydown="takeBankCardFn(this)" onblur="judgeBank(this)"><i class="red_require">*</i></div>
+            <div class="card_input"><input id="phoneNum" type="text" class="input_font" placeholder="请输入手机号"><i class="red_require">*</i></div>
+            <div class="card_input"><input id="smsNum" type="text" class="input_font" placeholder="请输入验证码">
+                <span id="get_phone_message" class="get_phone_message" onclick="getMessage()">获取验证码</span>
+            </div>`
+            <!-- <input type="button" value="获取验证码" class="org"> -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="bindBankNext bindInfo" onclick="bindCardFn()">确定绑定</div>
+    <div class="tipsInfo"><span>您已成功绑定</span></div>
+
+</body>
+
+</html>
+<script>
+    // 当前页面跳转上一页
+
+    $(".bar_nav i img").on('click', function () {
+
+        window.history.back(-1);
+
+    });
+</script>

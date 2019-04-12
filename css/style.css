@@ -1,0 +1,3941 @@
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-size: .94rem
+}
+
+
+
+@media screen and (max-width: 320px) {
+
+    html {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 360px) {
+
+    html {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 360px) and (max-width: 400px) {
+
+    html {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 400px) and (max-width: 440px) {
+
+    html {
+
+        font-size: 18px;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 440px) and (max-width: 480px) {
+
+    html {
+
+        font-size: 20px;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 480px) and (max-width: 520px) {
+
+    html {
+
+        font-size: 22px;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 520px) and (max-width: 560px) {
+
+    html {
+
+        font-size: 24px;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 560px) and (max-width: 600px) {
+
+    html {
+
+        font-size: 26px;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 600px) {
+
+    html {
+
+        font-size: 28px;
+
+    }
+
+}
+
+
+
+html,
+body {
+    color: #333;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+
+
+
+body,
+
+div,
+
+dl,
+
+dt,
+
+dd,
+
+ul,
+
+ol,
+
+li,
+
+h1,
+
+h2,
+
+h3,
+
+h4,
+
+h5,
+
+h6,
+
+pre,
+
+code,
+
+form,
+
+fieldset,
+
+legend,
+
+input,
+
+textarea,
+
+p,
+
+blockquote,
+
+th,
+
+td,
+
+hr,
+
+button,
+
+article,
+
+aside,
+
+details,
+
+figcaption,
+
+figure,
+
+footer,
+
+header,
+
+hgroup,
+
+menu,
+
+nav,
+
+section {
+
+    margin: 0;
+
+    padding: 0;
+
+    color: #333;
+
+}
+
+
+
+
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+
+
+
+article,
+
+aside,
+
+details,
+
+figcaption,
+
+figure,
+
+footer,
+
+header,
+
+hgroup,
+
+menu,
+
+nav,
+
+section {
+
+    display: block;
+
+}
+
+
+
+
+
+/* HTML5 媒体文件跟 img 保持一致 */
+
+
+
+audio,
+
+canvas,
+
+video {
+
+    display: inline-block;
+
+    *display: inline;
+
+    *zoom: 1;
+
+}
+
+
+
+
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+
+
+
+body,
+
+button,
+
+input,
+
+select,
+
+textarea {
+
+    font: normal 14px/24px "Helvetica Neue", Helvetica, STheiti, "Microsoft Yahei", "冬青黑体简体中文 w3", 宋体, Arial, Tahoma, sans-serif, serif;
+
+    word-wrap: break-word;
+
+    outline: none;
+
+    -webkit-appearance: none;
+
+}
+
+
+
+input,
+
+button,
+
+textarea,
+
+select,
+
+option,
+
+optiongroup {
+
+    font-family: inherit;
+
+    font-size: inherit;
+
+}
+
+
+
+input,
+
+select,
+
+textarea {
+
+    font-size: 100%;
+
+}
+
+
+
+
+
+/* 去掉各Table cell 的边距并让其边重合 */
+
+
+
+table {
+
+    border-collapse: collapse;
+
+    border-spacing: 0;
+
+}
+
+
+
+
+
+/* IE bug fixed: th 不继承 text-align*/
+
+
+
+th {
+
+    text-align: inherit;
+
+}
+
+
+
+
+
+/* 去除默认边框 */
+
+
+
+fieldset,
+
+img {
+
+    border: 0;
+
+}
+
+
+
+
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+
+
+
+iframe {
+
+    display: block;
+
+}
+
+
+
+
+
+/* 去掉 firefox 下此元素的边框 */
+
+
+
+abbr,
+
+acronym {
+
+    border: 0;
+
+    font-variant: normal;
+
+}
+
+
+
+
+
+/* 一致的 del 样式 */
+
+
+
+del {
+
+    text-decoration: line-through;
+
+}
+
+
+
+address,
+
+caption,
+
+cite,
+
+code,
+
+dfn,
+
+em,
+
+th,
+
+var {
+
+    font-style: normal;
+
+    font-weight: 500;
+
+}
+
+
+
+
+
+/* 去掉列表前的标识, li 会继承 */
+
+
+
+ol,
+
+ul {
+
+    list-style: none;
+
+}
+
+
+
+
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+
+
+
+caption,
+
+th {
+
+    text-align: left;
+
+}
+
+
+
+
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+
+
+
+h1,
+
+h2,
+
+h3,
+
+h4,
+
+h5,
+
+h6 {
+
+    font-size: 100%;
+
+    font-weight: 500;
+
+}
+
+
+
+q:before,
+
+q:after {
+
+    content: '';
+
+}
+
+
+
+
+
+/* 统一上标和下标 */
+
+
+
+sub,
+
+sup {
+
+    font-size: 75%;
+
+    line-height: 0;
+
+    position: relative;
+
+    vertical-align: baseline;
+
+}
+
+
+
+sup {
+
+    top: -0.5em;
+
+}
+
+
+
+sub {
+
+    bottom: -0.25em;
+
+}
+
+
+
+a {
+
+    color: #333;
+
+}
+
+
+
+
+
+/* 让链接在 hover 状态下显示下划线 */
+
+
+
+a:hover {
+
+    text-decoration: none;
+
+    color: #c00;
+
+}
+
+
+
+
+
+/* 默认不显示下划线，保持页面简洁 */
+
+
+
+ins,
+
+a {
+
+    text-decoration: none;
+
+}
+
+
+
+
+
+/* 清理浮动 */
+
+
+
+.clearfix:after {
+
+    visibility: hidden;
+
+    display: block;
+
+    font-size: 0;
+
+    content: " ";
+
+    clear: both;
+
+    height: 0;
+
+}
+
+
+
+.clearfix {
+
+    zoom: 1;
+
+    /* for IE6 IE7 */
+
+}
+
+
+
+.lrpd20 {
+
+    padding: 0 .63rem;
+
+}
+
+
+
+.lpd20 {
+
+    padding-left: .63rem;
+
+}
+
+
+
+.boxCont,
+
+.RepayInfoList,
+
+.RepayInfoBar,
+
+.RepayTitle,
+
+.RepayTitle ul,
+
+.RepayContLi ul li,
+
+.RepayContLi ul .LiMore p,
+
+.DetailsInfo ul li {
+
+    display: -webkit-flex;
+
+    display: flex;
+
+}
+
+
+
+.boxList,
+
+.RepayInfoBar p,
+
+.RepayTitle ul li,
+
+.RepayContLi ul li p,
+
+.RepayContLi ul .LiMore p span,
+
+.DetailsInfo ul li p {
+
+    -webkit-flex: 1;
+
+    -ms-flex: 1;
+
+    flex: 1;
+
+    -webkit-box-flex: 1;
+
+    -moz-box-flex: 1;
+
+    width: 0%;
+
+    display: block;
+
+}
+
+
+
+input[type=range] {
+
+    margin-top: 8px;
+
+    outline: none;
+
+    -webkit-appearance: none;
+
+    /*清除系统默认样式*/
+
+    width: 100% !important;
+
+    background: -webkit-linear-gradient(#fff, #fff) no-repeat, #fff;
+
+    background-size: 100%;
+
+    /*设置左右宽度比例*/
+
+    height: 1px;
+
+    /*横条的高度*/
+
+}
+
+
+
+
+
+/*拖动块的样式*/
+
+
+
+input[type=range]::-webkit-slider-thumb {
+
+    -webkit-appearance: none;
+
+    /*清除系统默认样式*/
+
+    height: 1.25rem;
+
+    /*拖动块高度*/
+
+    width: 1.25rem;
+
+    /*拖动块宽度*/
+
+    background: #fff;
+
+    /*拖动块背景*/
+
+    border-radius: 50%;
+
+    /*外观设置为圆形*/
+
+    border: solid 1px #ddd;
+
+    /*设置边框*/
+
+}
+
+
+
+#bgf0 {
+    background: #f0f0f0;
+    overflow-y: auto;
+}
+
+
+
+.pl20 {
+
+    padding-left: .63rem;
+
+}
+
+
+
+.bar_nav {
+
+    width: 100%;
+
+    height: 2.75rem;
+
+    background: #ffffff;
+
+    position: fixed;
+
+    color: #000000;
+
+    line-height: 2.75rem;
+
+    font-size: 1.13rem;
+
+    text-align: center;
+
+    z-index: 99;
+    top: 0;
+
+}
+
+
+
+.bar_nav i {
+
+    text-align: left;
+
+}
+
+
+
+.bar_nav i img {
+
+    width: 1.25rem;
+
+    position: absolute;
+
+    left: .63rem;
+
+    top: .78rem;
+
+}
+
+.bar_nav.naviBar {
+    height: 2.75rem;
+    background: url("../images/newstyle/navigation_bars@2x.png") no-repeat;
+    background-size: 100%;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    line-height: 2.75rem;
+
+}
+
+.detail_banner {
+    margin-top: 2.75rem;
+    /* margin: 0 auto; */
+    height: 8.5rem;
+    background: url("../images/newstyle/backdrop4@2x.png") no-repeat;
+    background-size: 100%;
+    text-align: center;
+}
+
+.detail_banner .paybackWarpper {
+    padding-top: 1.875rem;
+}
+
+.detail_banner .paybackMoney {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    border-bottom: 1px solid #fff;
+    padding-bottom: .4rem;
+}
+
+/* .detail_banner .paybackMoney::after {
+    content: "";
+    position: absolute;
+    left: auto;
+    top: auto;
+    bottom: -0.625rem;
+    right: 50%;
+    height: .0625rem;
+    width: 5.1rem;
+    background-color: rgba(220, 220, 220, 1);
+    transform: translate(50%);
+} */
+
+.detail_banner .paybackUnit {
+    margin-top: 0.9rem;
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+}
+
+.bindCont {
+
+    padding-top: 2.75rem;
+
+    background: #fff;
+
+}
+
+
+
+.bindCont ul li {
+
+    border-bottom: 1px solid #dcdcdc;
+
+    height: 3.13rem;
+
+    line-height: 3.13rem;
+
+    display: -webkit-flex;
+
+    display: flex;
+
+    position: relative;
+
+    padding-right: .63rem;
+
+}
+
+
+
+.bindCont ul li span {
+
+    width: 8.75rem;
+
+}
+
+
+
+.bindCont ul li p {
+
+    -webkit-flex: 1;
+
+    -ms-flex: 1;
+
+    flex: 1;
+
+    -webkit-box-flex: 1;
+
+    -moz-box-flex: 1;
+
+    width: 0%;
+
+    display: block;
+
+    text-align: right;
+
+}
+
+
+
+.bindCont ul li p input {
+
+    width: 100%;
+
+    height: 3rem;
+
+    line-height: 3rem;
+
+    text-align: right;
+
+    border: none;
+
+}
+
+
+
+.bindCont ul li.secBg p {
+
+    background: url(../images/icon_30x30_1@2x.png) no-repeat;
+
+    background-position: right;
+
+    background-size: .94rem;
+
+}
+
+
+
+.bindCont ul li.secBg p select {
+
+    width: 100%;
+
+    border: none;
+
+    background: none;
+
+    appearance: none;
+
+    -moz-appearance: none;
+
+    -webkit-appearance: none;
+
+    direction: rtl;
+
+    padding-right: 1.56rem;
+
+}
+
+
+
+.bindCont ul li.phoneCode p input {
+
+    padding-right: 6.25rem;
+
+}
+
+
+
+.bindCont ul li.phoneCode input.org {
+
+    position: absolute;
+
+    right: .63rem;
+
+    top: .47rem;
+
+    width: auto;
+
+    height: auto;
+
+    background: #f6ab00;
+
+    border: none;
+
+    color: #fff;
+
+    padding: .31rem;
+
+    z-index: 3;
+
+    border-radius: .16rem;
+
+    font-size: .56rem;
+
+}
+
+
+
+.bindAccountNext {
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 3.13rem;
+
+    line-height: 3.13rem;
+
+    text-align: center;
+
+    color: #fff;
+
+    background: #f6ab00;
+
+}
+
+
+
+.tipsInfo {
+
+    position: fixed;
+
+    bottom: 5rem;
+
+    left: 0;
+
+    z-index: 9999;
+
+    text-align: center;
+
+    width: 100%;
+
+    display: none;
+
+}
+
+
+
+.tipsInfo span {
+
+    color: #fff;
+
+    padding: .31rem .63rem;
+
+    background: rgba(0, 0, 0, .6);
+
+    border-radius: .94rem;
+
+}
+
+
+
+.billingCont {
+
+    padding-top: 3.75rem;
+
+}
+
+
+
+.billingCont div {
+
+    text-align: center;
+
+}
+
+
+
+.billingCont div img {
+
+    width: 10.5rem;
+
+}
+
+
+
+.bilingTitle {
+
+    line-height: 2.5rem;
+
+    padding-left: .63rem;
+
+}
+
+
+
+.bilingList {}
+
+
+
+.DataList {}
+
+
+
+.listParent {
+
+    padding: 0 .63rem;
+
+    background: #fff;
+
+    height: 3.13rem;
+
+    line-height: 3.13rem;
+
+    border-bottom: 1px solid #dcdcdc;
+
+}
+
+
+
+.listParent span,
+
+.listChildren p span {
+
+    -webkit-flex: 1;
+
+    -ms-flex: 1;
+
+    flex: 1;
+
+    -webkit-box-flex: 1;
+
+    -moz-box-flex: 1;
+
+    width: 0%;
+
+    display: block;
+
+}
+
+
+
+.listParent span:nth-child(2) {
+
+    text-align: right;
+
+    padding-right: .63rem;
+
+}
+
+
+
+.listParent i {
+
+    width: .94rem;
+
+}
+
+
+
+.listParent i img {
+
+    width: 100%;
+
+    margin-top: 1.03rem;
+
+    float: left;
+
+}
+
+
+
+.listParent i.active img {
+
+    transform: rotate(-90deg);
+
+    -ms-transform: rotate(-90deg);
+
+    /* IE 9 */
+
+    -moz-transform: rotate(-90deg);
+
+    /* Firefox */
+
+    -webkit-transform: rotate(-90deg);
+
+    /* Safari 和 Chrome */
+
+    -o-transform: rotate(-90deg);
+
+    /* Opera */
+
+}
+
+
+
+.listChildren {
+
+    line-height: 1.56rem;
+
+    padding: .63rem 1.25rem;
+
+    display: none;
+
+}
+
+
+
+.listChildren p span:nth-child(2) {
+
+    text-align: right;
+
+}
+
+
+
+.listParent span.colf08 {
+
+    color: #f6ab00
+}
+
+
+
+.loadData {
+
+    text-align: center;
+
+    line-height: 3.13rem;
+
+    color: #999;
+
+    position: fixed;
+
+    width: 100%;
+
+    bottom: 0;
+
+    left: 0;
+
+    display: none;
+
+}
+
+
+
+.paymentHistory,
+
+.DetailsStaging {
+
+    /* padding-top: 2.75rem; */
+
+}
+
+
+
+.historyTitle {
+
+    line-height: 2.19rem;
+
+    padding-left: .94rem;
+
+}
+
+
+
+.historyCont {
+
+    padding-left: .94rem;
+
+    background: #fff;
+
+}
+
+
+
+.historyList {
+
+    border-bottom: 1px solid #dcdcdc;
+
+    padding: .94rem 0;
+
+}
+
+
+
+.historyList p {
+
+    line-height: 2.19rem
+}
+
+
+
+.historyList p span:nth-child(1) {
+
+    width: 8.44rem;
+
+}
+
+
+
+.historyList p span:nth-child(2),
+
+.Inquiries p span {
+
+    -webkit-flex: 1;
+
+    -ms-flex: 1;
+
+    flex: 1;
+
+    -webkit-box-flex: 1;
+
+    -moz-box-flex: 1;
+
+    width: 0%;
+
+    display: block;
+
+}
+
+
+
+.historyList p span em {
+
+    color: #999;
+
+}
+
+
+
+.historyList p span i {
+
+    font-style: normal;
+
+}
+
+
+
+.historyList p span.loanAmount {
+
+    font-size: 1.13rem;
+
+    color: #f6ab00;
+
+}
+
+
+
+.Inquiries p em {
+
+    color: #999;
+
+}
+
+
+
+.Inquiries p i {
+
+    font-style: normal;
+
+}
+
+
+
+.getUserWx {
+
+    padding-top: 2.75rem;
+
+}
+
+
+
+.WxTisp {
+
+    background: #4db232;
+
+    padding: 1.41rem 1.25rem;
+
+    text-align: center;
+
+}
+
+
+
+.WxTisp img {
+
+    width: 5.63rem;
+
+}
+
+
+
+.WxTisp p {
+
+    font-size: 1rem;
+
+    color: #fff;
+
+    text-align: left;
+
+}
+
+
+
+.WxTipsInfo {
+
+    padding: 1.25rem 2.5rem;
+
+    background: url(../images/icon_40x40_17@2x.png) 10px no-repeat;
+
+    background-size: 1.25rem;
+
+}
+
+
+
+.clickInfo {
+
+    margin: 1.25rem 1.56rem;
+
+    background: #4db232;
+
+    color: #fff;
+
+    font-size: 1.06rem;
+
+    line-height: 2.81rem;
+
+    text-align: center;
+
+    border-radius: .16rem;
+
+}
+
+
+
+.borrowCont {
+
+    margin-top: 0.62rem;
+
+    position: relative;
+
+    background: #fff;
+
+    padding: 0 0.93rem 0.56rem 0.93rem;
+
+}
+
+
+
+.borrowLabel {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    z-index: 2;
+
+    width: 4.12rem;
+
+    height: 4.12rem;
+
+}
+
+
+
+/* .borrowingCont {
+
+    padding-top: 2.75rem;
+
+} */
+
+
+
+.Labelload {
+
+    background: url(../images/icon_120x120_10@2x.png) no-repeat;
+
+    background-size: 4.12rem;
+
+}
+
+
+
+.accomplish {
+
+    background: url(../images/icon_120x120_14@2x.png) no-repeat;
+
+    background-size: 4.12rem;
+
+}
+
+
+
+.reject {
+
+    background: url(../images/icon_120x120_15@2x.png) no-repeat;
+
+    background-size: 4.12rem;
+
+}
+
+
+
+.loansSucceed {
+
+    background: url(../images/icon_120x120_13@2x.png) no-repeat;
+
+    background-size: 4.12rem;
+
+}
+
+
+
+.Besignedup {
+
+    background: url(../images/icon_120x120_11@2x.png) no-repeat;
+
+    background-size: 4.12rem;
+
+}
+
+
+
+.Pendingmoney {
+
+    background: url(../images/icon_120x120_12@2x.png) no-repeat;
+
+    background-size: 4.12rem;
+
+}
+
+
+
+.borrowMoney {
+
+    text-align: center;
+
+    font-size: 0.87rem;
+
+    color: #666;
+
+    padding-top: 1.56rem;
+
+}
+
+
+
+.borrowMoney span {
+
+    color: #ff8e3a;
+
+    font-size: 1.25rem;
+
+    margin-right: 0.31rem;
+
+}
+
+
+
+.borrowMoney span.cor666 {
+
+    color: #666;
+
+}
+
+
+
+.borrowTitle {
+
+    text-align: center;
+
+    font-size: 0.87rem;
+
+    color: #666;
+
+    padding: 0.62rem 0 1.09rem 0;
+
+}
+
+
+
+.workflow {
+
+    margin-left: 0.46rem;
+
+}
+
+
+
+.clearMargin {
+
+    padding-top: 1.25rem;
+
+}
+
+
+
+.workflow p {
+
+    position: relative;
+
+    margin-bottom: 1.56rem;
+
+}
+
+
+
+.workflow p img {
+
+    width: 0.93rem;
+
+    position: absolute;
+
+    left: -0.46rem;
+
+    top: 0.15rem;
+
+}
+
+
+
+.workflow p span {
+
+    margin-left: 1.56rem;
+
+    font-size: 0.93rem;
+
+    color: #999;
+
+}
+
+
+
+.workflow p span.orgTxt {
+
+    color: #ff8e3a;
+
+}
+
+
+
+.workflowBtn {
+
+    padding: 0 4.53rem;
+
+    height: 1.87rem;
+
+    line-height: 1.87rem;
+
+}
+
+
+
+.workflowBtn a {
+
+    width: 50%;
+
+    float: left;
+
+    line-height: 1.87rem;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-size: 0.87rem;
+
+    color: #666;
+
+}
+
+
+
+.borrowInfo {
+
+    display: -webkit-flex;
+
+    display: -webkit-flex;
+
+    display: flex;
+
+    padding: 0 0.93rem;
+
+    margin-top: 1.025rem;
+
+}
+
+
+
+.borrowInfo div {
+
+    text-align: center;
+
+}
+
+
+
+.borrowInfo div h2 {
+
+    color: #666;
+
+    font-size: 0.87rem;
+
+}
+
+
+
+.borrowInfo div p {
+
+    color: #999;
+
+    font-size: 0.81rem;
+
+}
+
+
+
+.borrowInfo .periods {
+
+    width: 5.93rem;
+
+}
+
+
+
+.borrowInfo .debtMoney,
+
+.borrowInfo .debtDate,
+
+.borrowDetailsInfo ul li p,
+
+.borrowTimeTitle p,
+
+.borrowTimeCont ul li p,
+
+.RepayInfoList p {
+
+    -webkit-box-flex: 1;
+
+    -moz-box-flex: 1;
+
+    -webkit-flex: 1;
+
+    -ms-flex: 1;
+
+    flex: 1;
+
+    width: 0%;
+
+}
+
+
+
+.dabtMoneyInfo {
+
+    margin-top: 1.25rem;
+
+    font-size: 0.87rem;
+
+    color: #666;
+
+    text-align: center;
+
+}
+
+
+
+#borrowingList {
+
+    padding-bottom: 4.5rem;
+
+}
+
+
+
+.debtReject {
+
+    padding-top: 1.25rem;
+
+}
+
+
+
+.debtReject h2 {
+
+    font-size: 0.87rem;
+
+    color: #999;
+
+    margin-bottom: 0.78rem;
+
+}
+
+
+
+.debtReject p {
+
+    font-size: 0.81rem;
+
+    color: #999;
+
+}
+
+
+
+.cancelInfo {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 998;
+
+    background: rgba(0, 0, 0, .3);
+
+    width: 100%;
+
+    height: 100%;
+
+    left: 0;
+
+    top: 0;
+
+}
+
+
+
+.cancelInfo-con {
+
+    border-radius: 0.31rem;
+
+    width: 16.87rem;
+
+    height: 14.37rem;
+
+    background: #fff;
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    margin-top: -7.18rem;
+
+    margin-left: -8.43rem;
+
+    z-index: 999;
+
+}
+
+
+
+.cancelTitle {
+
+    text-align: center;
+
+    margin-top: 2.18rem;
+
+    padding-bottom: 1.87rem;
+
+}
+
+
+
+.cancelTitle img {
+
+    width: 5rem;
+
+    height: 5rem;
+
+}
+
+
+
+.cancelTitle p {
+
+    font-size: 1rem;
+
+    color: #666;
+
+    margin-top: 1.56rem;
+
+}
+
+
+
+.cancelCon {
+
+    line-height: 2.18rem;
+
+    box-sizing: border-box;
+
+}
+
+
+
+.cancelCon p {
+
+    width: 50%;
+
+    float: left;
+
+    text-align: center;
+
+    font-size: 1rem;
+
+    color: #333;
+
+}
+
+
+
+.border-left {
+
+    position: relative;
+
+    border: none;
+
+}
+
+
+
+.border-left:before {
+
+    display: block;
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 1px;
+
+    height: 100%;
+
+    background: #E1E1E1;
+
+    content: '';
+
+    transform: scaleX(0.5);
+
+    transform-origin: 0 0;
+
+}
+
+
+
+.border-bottom {
+
+    position: relative;
+
+    border: none;
+
+}
+
+
+
+.border-bottom:after {
+
+    display: block;
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: #E1E1E1;
+
+    content: '';
+
+    transform: scaleY(0.5);
+
+    transform-origin: 0 1px;
+
+}
+
+
+
+.RepayInfo {
+
+    padding-top: 2.75rem;
+
+}
+
+
+
+.RepayBanner {
+
+    height: 11.25rem;
+
+    background: url(../images/ico_750x360@2x.png) no-repeat;
+
+    background-size: 100%;
+
+    position: relative;
+
+}
+
+
+
+.RepayMoney {
+
+    text-align: center;
+
+}
+
+
+
+.RepayMoney p {
+
+    color: #fff;
+
+    padding-top: 2.19rem;
+
+    margin-bottom: 1.09rem;
+
+}
+
+
+
+.RepayMoney h2 span {
+
+    font-size: 1.88rem;
+
+    color: #fbcf03;
+
+    border-bottom: 1px solid #fff;
+
+    padding-bottom: .31rem;
+
+}
+
+
+
+.RepayInfoList {
+
+    margin-top: 2.2rem;
+
+}
+
+
+
+.RepayInfoList p {
+
+    text-align: center;
+
+    color: #fff;
+
+    border-right: 1px solid #fff;
+
+    line-height: .78rem
+}
+
+
+
+.RepayInfoList p:last-child {
+
+    border: none;
+
+}
+
+
+
+.RepayInfoBar {
+
+    height: 1.5rem;
+
+    line-height: 1.5rem;
+
+    padding: 0 .94rem;
+
+    background: #f2f2f2;
+
+}
+
+
+
+.RepayInfoBar p {
+
+    text-align: left;
+
+}
+
+
+
+.RepayTab ul li {
+
+    width: 50%;
+
+    float: left;
+
+    line-height: 2.5rem;
+
+    border-bottom: 2px solid #ccc;
+
+    text-align: center;
+
+}
+
+
+
+.RepayTab ul li.active {
+
+    border-bottom: 2px solid #2e89de;
+
+    color: #2e89de;
+
+}
+
+
+
+.RepayTitle {
+
+    padding-left: .94rem;
+
+    margin-top: .63rem;
+
+}
+
+
+
+.RepayTitle span {
+
+    width: 1.25rem;
+
+}
+
+
+
+.RepayTitle ul {
+
+    width: 100%;
+
+}
+
+
+
+.RepayTitle ul li {
+
+    text-align: center;
+
+    color: #999;
+
+    position: relative;
+
+}
+
+
+
+.RepayTitle ul li img {
+
+    position: absolute;
+
+    width: 1rem;
+
+    right: -0.63rem;
+
+    top: .16rem;
+
+}
+
+
+
+.RepayContLi {
+
+    display: none;
+
+}
+
+
+
+.RepayContLi ul li {
+
+    line-height: 3.13rem;
+
+    border-bottom: 1px solid #ccc;
+
+    padding-left: .94em;
+
+}
+
+
+
+.RepayContLi ul li span {
+
+    width: 1.25rem;
+
+    background: url(../images/icon_40x40_28@2x.png) no-repeat;
+
+    background-size: 1rem;
+
+    background-position: 0 .94rem;
+
+}
+
+
+
+.RepayContLi ul li.active span {
+
+    background: url(../images/icon_40x40_27@2x.png) no-repeat;
+
+    background-size: 1rem;
+
+    background-position: 0 .94rem;
+
+}
+
+
+
+.RepayContLi ul li p {
+
+    text-align: center;
+
+}
+
+
+
+.RepayContLi ul .LiMore {
+
+    background: #f2f2f2;
+
+    padding: .88rem 3.75rem;
+
+    display: none;
+
+}
+
+
+
+.RepayContLi ul .LiMore p span:last-child {
+
+    text-align: right;
+
+}
+
+
+
+.RepayContList div.active {
+
+    display: block;
+
+    margin-bottom: 3.5em;
+
+}
+
+
+
+.DetailsInfo {
+
+    padding: 1.25rem .94rem;
+
+}
+
+
+
+.DetailsInfo ul li {
+
+    line-height: 2.5rem;
+
+}
+
+
+
+.DetailsInfo ul li span {
+    width: 5rem;
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+}
+
+
+
+.DetailsInfo ul li p {
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+}
+
+
+
+.DetailsInfo ul li p a {
+    color: #2e89de;
+
+}
+
+
+
+.TitleBar {
+
+    height: .63rem;
+
+    background: #f2f2f2;
+
+}
+
+
+
+.DetailsTips {
+
+    padding: 0 .94rem;
+
+}
+
+
+
+.DetailsTitle {
+
+    border-bottom: 1px solid #ccc;
+
+    padding: .63rem .94rem;
+
+}
+
+
+
+.DetailsTitle span {
+
+    border-left: .25rem solid #F6AB00;
+
+    padding-left: .63rem;
+
+}
+
+
+
+
+.term {
+
+    display: none;
+
+}
+
+
+
+.shade_layer {
+
+    z-index: 100000;
+
+    background-color: rgb(221, 217, 217);
+
+    display: flex;
+
+    position: absolute;
+
+    top: 0px;
+
+    left: 0px;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0.4;
+
+    display: none;
+
+}
+
+
+
+.shade_inside_layer {
+
+    z-index: 100002;
+
+    width: 100%;
+
+    height: 50px;
+
+    text-align: center;
+
+    position: absolute;
+
+    opacity: 1.2;
+
+    top: 45%;
+
+    display: none;
+
+    /*  left: 53%;
+
+    transform: translate(-50%, -50%); */
+
+}
+
+
+
+.shade_inside_layer span {
+
+    /* position: absolute;
+
+    top: 100%;
+
+    left: -50%;
+
+    display: inline-block;
+
+    width: 10rem; */
+
+    display: none;
+
+    width: 100%;
+
+    text-align: center;
+
+}
+
+
+
+.productName {
+
+    white-space: nowrap;
+
+}
+
+
+
+.shell_we_show {
+
+    display: none;
+
+}
+
+
+
+.footbar {
+
+    display: flex;
+
+    position: fixed;
+
+    bottom: 0;
+
+    right: 0;
+
+    background-color: #F6AB00;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    width: 50%;
+
+    height: 3rem;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+.footBtn {
+
+    position: fixed;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 50%;
+
+    height: 3rem;
+
+    line-height: 3rem;
+
+    padding-left: 2.19rem;
+
+    background: url(../images/icon_40x40_27@2x.png) #fff no-repeat;
+
+    background-size: 1rem;
+
+    background-position: .94rem;
+
+}
+
+
+
+.footBtnActive {
+
+    background: url(../images/icon_32x323.png) #fff no-repeat;
+
+    background-size: 1rem;
+
+    background-position: .94rem;
+
+}
+
+
+
+.makeItCenter {
+
+    text-align: center;
+
+}
+
+
+
+.iWantPay {
+
+    width: 100%;
+
+    height: 3rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 1rem;
+
+}
+
+
+
+.likeBtn {
+
+    padding: .5rem 4rem;
+
+    border: 1px solid #bebdbd;
+
+    border-radius: .3rem;
+
+    box-shadow: 0 1px 3px #bebdbd;
+
+    -webkit-box-shadow: 0 1px 3px #bebdbd;
+
+}
+
+
+
+#myDialog {
+
+    display: none;
+
+}
+
+
+
+.myDialog-mask {
+
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 10;
+
+    background: rgba(0, 0, 0, .5);
+
+    opacity: 0.6;
+
+}
+
+
+
+.myDialog-inner {
+
+    position: fixed;
+
+    top: 30%;
+
+    margin: 0px auto;
+
+    left: 0;
+
+    right: 0;
+
+    width: 460px;
+
+    z-index: 11;
+
+    border-radius: 5px;
+
+    background-color: white;
+
+}
+
+
+
+#myDialog-close {
+
+    position: absolute;
+
+    top: .2rem;
+
+    right: .5rem;
+
+    width: 2rem;
+
+    height: 2rem;
+
+    text-align: center;
+
+}
+
+
+
+.myDialog-header {
+
+    width: 100%;
+
+    height: 40%;
+
+    border-bottom: 1px solid #d9d9d9;
+
+}
+
+
+
+.myDialog-content {
+
+    width: 100%;
+
+    height: 45%;
+
+}
+
+
+
+.myDialog_header_title {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-flow: column nowrap;
+
+}
+
+
+
+.myDialog_header_title .header_item {
+
+    padding-top: 1.5rem;
+
+    font: #000000;
+
+    font-size: 18px;
+
+}
+
+
+
+.myDialog_header_title .header_money {
+
+    margin-top: .5rem;
+
+    font: #000000;
+
+    font-size: 16px;
+
+}
+
+
+
+.header_money img {
+
+    width: 1.25rem;
+
+    margin: .16rem .31rem;
+
+}
+
+
+
+.orange_font {
+
+    color: #ff8e3a;
+
+    font-weight: 600;
+
+}
+
+
+
+.title_size_font {
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+}
+
+
+
+.content_firstline {
+
+    padding: .7rem 1.8rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-flow: row;
+
+}
+
+
+
+.content_firstline_box {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+.myDialog-footer {
+
+    height: 15%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+#myDialog-ok {
+
+    height: 100%;
+
+    flex: 1;
+
+    justify-content: center;
+
+    align-items: center;
+
+    display: flex;
+
+    border-top: 1px solid #d9d9d9;
+
+    border-right: 1px solid #d9d9d9;
+
+    color: #2e89de;
+
+}
+
+
+
+#myDialog-cancel {
+
+    height: 100%;
+
+    flex: 1;
+
+    justify-content: center;
+
+    align-items: center;
+
+    display: flex;
+
+    border-top: 1px solid #d9d9d9;
+
+    /* border-left: 1px solid #d9d9d9; */
+
+    color: #2e89de;
+
+}
+
+
+
+.validateLine {
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+
+.validateBtn {
+
+    background-color: #2e89de;
+
+    color: #ffffff;
+
+    font-size: .9rem;
+
+    padding: .4rem;
+
+}
+
+
+
+.validateInput {
+
+    padding: .3rem;
+
+    width: 12rem;
+
+    border: 2px solid #d9d9d9;
+
+}
+
+
+
+.bankCardTips {
+
+    background-color: #d9d9d9;
+
+    padding-top: 2.75rem;
+
+    text-align: center;
+
+}
+
+
+
+.bankCardTips span {
+
+    font-size: .6rem;
+
+}
+
+
+
+.card_box {
+
+    height: 11rem;
+
+    width: 100%;
+
+    background-color: #ffffff;
+
+    padding-top: 1rem;
+
+}
+
+
+
+.card_detail {
+
+    border-top-left-radius: .6rem;
+
+    border-top-right-radius: .6rem;
+
+    width: 90%;
+
+    height: 100%;
+
+    background: url(../images/bank/icon_690x300_1@2x.png) no-repeat;
+
+    background-size: 100%;
+
+    margin: 0 auto;
+
+    position: relative;
+
+}
+
+
+
+.bank_icon {
+
+    position: absolute;
+
+    width: 4rem;
+
+    height: 4rem;
+
+    background-color: #ffffff;
+
+    border-radius: 2rem;
+
+    left: 1.5rem;
+
+    top: 1.5rem;
+
+}
+
+
+
+.card_num {
+
+    position: absolute;
+
+    top: 6rem;
+
+    left: 1.5rem;
+
+    font-size: .8rem
+}
+
+
+
+.bind_date {
+
+    position: absolute;
+
+    top: 7.5rem;
+
+    left: 1.5rem;
+
+    font-size: .8rem
+}
+
+
+
+.bindBank {
+
+    background: #fff;
+
+    padding: 1rem 0 2rem 0;
+
+}
+
+
+
+.bindBank .card_input {
+
+    width: 90%;
+
+    height: 3rem;
+
+    margin: 0 auto 1rem auto;
+
+    position: relative;
+
+}
+
+
+
+.bindBank .card_input input {
+
+    border: 1.5px solid #d9d9d9;
+
+    width: 100%;
+
+    height: 3rem;
+
+}
+
+
+
+.bindBank .card_input .red_require {
+
+    color: red;
+
+    font-size: 1.5rem;
+
+    position: absolute;
+
+    top: 1rem;
+
+    right: 1rem;
+
+}
+
+
+
+.bindBank .card_input .get_phone_message {
+
+    color: #f6ab00;
+
+    position: absolute;
+
+    top: 1rem;
+
+    right: 1rem;
+
+}
+
+
+
+.bindBank .card_input .input_font {
+
+    font-size: 1.1rem;
+
+    font-weight: 400;
+
+    padding: 1rem;
+
+}
+
+
+
+#bankName {
+
+    position: absolute;
+
+    top: 3rem;
+
+    left: 7rem;
+
+}
+
+
+
+.bindBankNext {
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 3.13rem;
+
+    line-height: 3.13rem;
+
+    text-align: center;
+
+    color: #fff;
+
+    background: #F6AB00;
+
+    z-index: 99999;
+
+}
+
+
+
+.content_firstline .lettlebox {
+
+    flex: .5
+}
+
+
+
+.content_firstline .standardbox {
+
+    flex: .7
+}
+
+
+
+.content_firstline .onehalfbox {
+
+    flex: 1.5
+}
+
+
+
+.iconbox {
+
+    width: 2rem;
+
+    height: 2rem;
+
+}
+
+
+
+#myMessage {
+    display: none;
+    position: fixed;
+    bottom: 6rem;
+    height: auto;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+}
+
+.myMessage {
+
+    color: #ffffff;
+
+}
+
+
+
+::-webkit-input-placeholder {
+
+    /* WebKit browsers */
+
+    color: #999;
+
+}
+
+
+
+:-moz-placeholder {
+
+    /* Mozilla Firefox 4 to 18 */
+
+    color: #999;
+
+}
+
+
+
+::-moz-placeholder {
+
+    /* Mozilla Firefox 19+ */
+
+    color: #999;
+
+}
+
+
+
+:-ms-input-placeholder {
+
+    /* Internet Explorer 10+ */
+
+    color: #999;
+
+}
+
+
+
+.content_firstline_box .tinyLogo {
+
+    width: .8rem;
+
+    height: .8rem;
+
+    /* border: 1px solid red; */
+
+    margin: 0 .2rem 0 0;
+
+}
+
+
+
+.addCardNum {
+
+    padding: .3rem 1.8rem;
+
+    margin-bottom: .63rem;
+
+    display: flex;
+
+    background: url(../images/icon_30x30_1@2x.png) #F2F2F2 18rem no-repeat;
+
+    background-size: .94rem;
+
+}
+
+
+
+.addCardNum span img {
+
+    width: .81rem;
+
+    margin-right: .63rem;
+
+}
+
+
+
+.carListDialog {
+
+    width: 90%;
+
+    height: 22rem;
+
+    position: fixed;
+
+    top: 50%;
+
+    left: 50%;
+
+    margin-top: -10rem;
+
+    margin-left: -45%;
+
+    background: #fff;
+
+    z-index: 999;
+
+    display: none;
+
+    border-radius: 5px;
+
+    overflow: scroll;
+
+}
+
+
+
+.carListTitle {
+
+    text-align: center;
+
+    padding: .94rem;
+
+    border-bottom: 1px solid #dcdcdc;
+
+}
+
+
+
+.carListTitle h2 {
+
+    font-size: 1.06rem;
+
+    color: #333;
+
+}
+
+
+
+.carListTitle p {
+
+    font-size: .81rem;
+
+    color: #999;
+
+}
+
+
+
+.carListCont {
+
+    padding-left: .94rem;
+
+}
+
+
+
+.carListCont ul li {
+
+    border-bottom: 1px solid #dcdcdc;
+
+    line-height: 2.5rem;
+
+}
+
+
+
+.carListCont ul li img {
+
+    width: 1.2rem;
+
+    float: left;
+
+    margin-top: .47rem;
+
+}
+
+
+
+.carListCont ul li.active {
+
+    background: url(../images/Choice.png) 95% no-repeat;
+
+    background-size: 1rem;
+
+}
+
+
+
+.payStatus3 {
+
+    background: rgba(0, 0, 0, .3);
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 98;
+
+    left: 0;
+
+    top: 0;
+
+    display: none;
+
+}
+
+
+
+.payStatus3Cont {
+
+    background: #fff;
+
+    position: fixed;
+
+    width: 90%;
+
+    height: 10rem;
+
+    border-radius: 5px;
+
+    top: 50%;
+
+    left: 50%;
+
+    margin: -5rem -45%;
+
+}
+
+
+
+.payStatus4Cont {
+
+    background: #fff;
+
+    position: fixed;
+
+    width: 90%;
+
+    height: 18rem;
+
+    border-radius: 5px;
+
+    top: 50%;
+
+    left: 50%;
+
+    margin: -9rem -45%;
+
+}
+
+
+
+.payStatusTitle {
+
+    border-bottom: 1px solid #DCDCDC;
+
+    padding: .63rem;
+
+    text-align: center;
+
+}
+
+
+
+.payStatusTitle p {
+
+    color: #FF8E3A;
+
+    font-weight: bold;
+
+}
+
+
+
+.payStatusTxt {
+
+    padding: 2.19rem 2.5rem;
+
+    text-align: center;
+
+    border-bottom: 1px solid #DCDCDC;
+
+}
+
+
+
+.payStatusTxt p {
+
+    display: flex;
+
+}
+
+
+
+.payStatusTxt p span {
+
+    flex: 1;
+
+}
+
+
+
+.payStatusTxt p span:first-child {
+
+    text-align: left;
+
+}
+
+
+
+.payStatusTxt p span:last-child {
+
+    text-align: right;
+
+}
+
+
+
+.payStatusTxt h2 {
+
+    font-weight: bold;
+
+    padding-bottom: .63rem;
+
+}
+
+
+
+.payStatusBtn {
+
+    text-align: center;
+
+    line-height: 2.5rem;
+
+    color: #2E89DE;
+
+}
+
+.new_banner {
+    margin-top: 2.75rem;
+    width: 100vw;
+    height: 7.8125rem;
+    background: url("../images/newstyle/banner@2x.png") no-repeat;
+    background-size: 100%;
+}
+
+.new_style {
+    margin-top: 0.62rem;
+    position: relative;
+    width: 100vw;
+    height: 12.5rem;
+    background: rgba(255, 255, 255, 1);
+}
+
+.new_style .bottom_box {
+    width: 100vw;
+    height: 2.1875rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    background: rgba(249, 249, 249, 1);
+}
+
+.new_style .bottom_box .applyTime {
+    /* width: 6.25rem; */
+    float: left;
+}
+
+.new_style .bottom_box .applyTime span {
+    padding-left: 1.03125rem;
+    line-height: 2.1875rem;
+    font-size: .75rem;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+}
+
+.new_style .top_box {
+    padding: 0 1.5rem;
+    height: 10rem;
+}
+
+.new_style .top_box .line_one {
+    height: 2.8125rem;
+    border-bottom: 1px solid rgba(220, 220, 220, 1);
+}
+
+.new_style .top_box .line_one .appNo {
+    visibility: hidden;
+}
+
+.curObject {
+    visibility: hidden;
+}
+
+.new_style .top_box .line_one .line_one_img {
+    width: 1rem;
+    height: 1rem;
+    background: url("../images/newstyle/insurance@2x.png") no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.new_style .top_box .line_one span {
+    font-size: .875rem;
+    line-height: 2.8125rem;
+    color: rgba(51, 51, 51, 1);
+    vertical-align: middle;
+    padding-left: .3rem;
+}
+
+.new_style .status_title {
+    width: 4.0625rem;
+    height: 4.0625rem;
+    /* background: url('../images/newstyle/borrowing_label7@2x.png') no-repeat;
+    background-size: 100%; */
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.new_style .status_title_approval {
+    width: 4.0625rem;
+    height: 4.0625rem;
+    background: url('../images/newstyle/borrowing_label1@2x.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.new_style .top_box .line_two {
+    display: flex;
+    height: 7.4375rem;
+}
+
+.new_style .top_box .line_two .left_box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new_style .top_box .line_two .right_box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new_style .top_box .line_two .left_box .money {
+    height: 1.125rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(246, 171, 0, 1);
+}
+
+.new_style .top_box .line_two .left_box .moneyGray {
+    height: 1.125rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(102, 102, 102, 1);
+}
+
+.new_style .top_box .line_two .left_box .unit {
+    /* height: .78125rem; */
+    font-size: .8125rem;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+    margin-top: .3125rem;
+    margin-left: .1rem;
+
+}
+
+.new_style .top_box .line_two .right_box .title {
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+}
+
+.new_style .top_box .line_two .right_box .balanceImg {
+    margin-top: .3125rem;
+    border: 0;
+    height: .7rem;
+    background: url("../images/newstyle/circular3.png") no-repeat;
+    background-size: 100%;
+}
+
+.new_style .top_box .line_two .right_box .statusText .statusOne {
+    font-size: .8125rem;
+    font-weight: 500;
+    color: rgba(246, 171, 0, 1);
+    width: 6.4rem;
+    display: inline-block;
+}
+
+.new_style .top_box .line_two .right_box .statusText .statusTwo {
+    font-size: .8125rem;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+    /* padding-left: 2.1rem; */
+}
+
+.new_style .bottom_box div.repayBtn {
+    float: right;
+    width: 6.25rem;
+    height: 1.5rem;
+    background: rgba(246, 171, 0, 1);
+    border-radius: .75rem;
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: .8125rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    margin: .36rem .9375rem 0 0;
+}
+
+.new_style .top_box .line_two .another_right_box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.new_style .top_box .line_two .another_right_box .inside_left_box {
+    /* border-right: 1px solid rgba(220, 220, 220, 1); */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.new_style .top_box .line_two .another_right_box .inside_left_box:after {
+    content: '';
+    position: absolute;
+    left: auto;
+    top: auto;
+    bottom: 2.4rem;
+    right: 0;
+    height: 2.5rem;
+    width: 1px;
+    background-color: rgba(220, 220, 220, 1);
+}
+
+.new_style .top_box .line_two .another_right_box .inside_left_box span.curPeriod {
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+}
+
+.new_style .top_box .line_two .another_right_box .inside_left_box span.numOfPeriod {
+    font-size: .8125rem;
+    font-weight: 500;
+    color: rgba(180, 180, 180, 1);
+}
+
+.new_style .top_box .line_two .another_right_box .inside_right_box {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new_style .top_box .line_two .another_right_box .inside_right_box span.cureturn {
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+}
+
+.new_style .top_box .line_two .another_right_box .inside_right_box span.return {
+    font-size: .8125rem;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(180, 180, 180, 1);
+}
+
+.supplyBg {
+    height: 100vh;
+    width: 100vw;
+    background: #f0f0f0;
+    padding-top: 3.375rem;
+    overflow-y: auto;
+}
+
+.backReason {
+    height: 9.375rem;
+    width: 100vw;
+    background: #ffffff;
+    /* margin-top: 3.375rem; */
+}
+
+.backReason .backReasonTitle {
+    height: 2.8125rem;
+    width: 100vw;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(220, 220, 220, 1);
+    /* margin-top: 3.375rem; */
+}
+
+.backReason .backReasonTitle span {
+    line-height: 2.8125rem;
+    width: 100vw;
+    background: #ffffff;
+    /* margin-top: 3.375rem; */
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    position: relative;
+    margin-left: 1.78125rem;
+}
+
+.backReason .backReasonTitle span::after {
+    content: "";
+    position: absolute;
+    width: .1875rem;
+    height: .9375rem;
+    top: 0px;
+    left: -0.65625rem;
+    background: rgba(246, 171, 0, 1);
+
+}
+
+.backReason .backReasonContent {
+    height: 2.34375rem;
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+    line-height: 1.4375rem;
+    margin-left: 1.3rem;
+    margin-top: 1.5625rem;
+}
+
+.photoArea .photoTitle {
+    height: 2.8125rem;
+    width: 100vw;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(220, 220, 220, 1);
+}
+
+.photoArea .photoTitle span {
+    line-height: 2.8125rem;
+    width: 100vw;
+    background: #ffffff;
+    /* margin-top: 3.375rem; */
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    position: relative;
+    margin-left: 1.78125rem;
+}
+
+.photoArea .photoTitle span::after {
+    content: "";
+    position: absolute;
+    width: .1875rem;
+    height: .9375rem;
+    top: 0px;
+    left: -0.65625rem;
+    background: rgba(246, 171, 0, 1);
+
+}
+
+.photoArea {
+    width: 100vw;
+    margin-top: .65625rem;
+    /* height: auto; */
+    /* min-height: 30rem; */
+    height: auto;
+    background: #ffffff;
+    padding-bottom: 1rem;
+}
+
+.photoArea .photoBox {
+    margin: 0 auto;
+    padding: .9375rem;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    /* 拆行 */
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 100%;
+    min-height: 16.65rem;
+}
+
+.photoArea .photoBox .plusBox {
+    width: 47%;
+    height: 6.5625rem;
+    background: url("../images/newstyle/upload@2x.png") no-repeat;
+    background-size: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.photoArea .photoBox .plusBox img {
+    width: 100%;
+    height: 100%;
+}
+
+.photoArea .photoBox .plusBox:nth-child(even) {
+    margin-left: 1rem;
+}
+
+.submitBtn {
+    width: 21.5625rem;
+    height: 2.75rem;
+    background: rgba(246, 171, 0, 1);
+    border-radius: .1875rem;
+    /* position: absolute;
+    bottom: 0; */
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.submitBtn span {
+    line-height: 2.75rem;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: rgba(255, 254, 254, 1);
+}
+
+.photoArea .photoBox .deleteFn {
+    width: 1.25rem;
+    height: 1.25rem;
+    background: url(../images/newstyle/delete2@2x.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: .5625rem;
+    right: .5625rem;
+}
+
+.repayDetail {
+    width: 21.5625rem;
+    position: fixed;
+    height: 20rem;
+    top: 8rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #fff;
+    overflow-y: auto;
+    display: none;
+    z-index: 100001;
+}
+
+.repayDetail .repayTitle {
+    padding-top: 1.875rem;
+    text-align: center;
+}
+
+.repayDetail .repayTitle .title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: rgba(51, 51, 51, 1);
+}
+
+.repayDetail .repayTitle p {
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+}
+
+
+.repayDetail .repayHead {
+    margin-top: .9375rem;
+    width: 100%;
+    height: 2.5rem;
+    background: rgba(242, 242, 242, 1);
+
+}
+
+.repayDetail .repayHead ul,
+.repayDetail .repayContent ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.repayDetail .repayHead ul li,
+.repayDetail .repayContent ul li {
+    flex: 1;
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: .8125rem;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+}
+
+.repayDetail .cancelBtn {
+    width: .9375rem;
+    height: .9375rem;
+    position: absolute;
+    background: url("../images/delete@2x.png") no-repeat;
+    background-size: 100%;
+    top: .9375rem;
+    right: .9375rem;
+}
+
+.noInfo {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.noInfo img {
+    width: 6.25rem;
+    height: 5rem;
+}
+
+.noInfo .fontModel {
+    font-size: 1rem;
+}

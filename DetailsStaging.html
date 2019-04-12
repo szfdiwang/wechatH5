@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta name="viewport"
+        content="target-densitydpi=device-dpi,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>分期详情</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/conmm.js"></script>
+    <script type="text/javascript" src="js/WechatPublic.js"></script>
+</head>
+
+<body>
+    <div id="bgf0">
+        <div class="bar_nav naviBar">
+            <i>
+                <img class="backFn" src="images/newstyle/return@2x.png">
+            </i> 分期详情
+        </div>
+        <div class="shade_layer">
+
+        </div>
+        <div class="shade_inside_layer">
+            <img src="images/loading.gif">
+            <span>加载中, 请稍后...</span>
+        </div>
+        <div class="detail_banner">
+            <div class="paybackWarpper">
+                <span class="paybackMoney"></span>
+            </div>
+            <div class="paybackUnit">申请金额(元)</div>
+        </div>
+        <div class="DetailsStaging">
+            <div class="DetailsInfo">
+                <ul>
+                    <li>
+                        <span>订单编号</span>
+                        <p class="appNo"></p>
+                    </li>
+                    <li>
+                        <span>驾校名称</span>
+                        <p class="driverSchool"></p>
+                    </li>
+                    <li>
+                        <span>分期金额</span>
+                        <p class="amountMoney"></p>
+                    </li>
+                    <li>
+                        <span>分期期限</span>
+                        <p class="totalPeriod"></p>
+                    </li>
+                    <li>
+                        <span>每期还款</span>
+                        <p class="perMonth"><a href="javascript:;" class="queryDetail">查看详情</a></p>
+                    </li>
+                    <li>
+                        <span>协议说明</span>
+                        <p><a href="javascript:;" class="protocol">《分期协议》</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="TitleBar"></div>
+            <div class="DetailsTitle"><span>分期进度</span></div>
+            <div class="DetailsTips">
+                <div class="clearMargin">
+                    <div class="workflow border-left">
+                        <p>
+                            <img src="images/icon_32x322.png">
+                            <span class="status015">待签约</span>
+                        </p>
+                        <p>
+                            <img src="images/icon_32x322.png">
+                            <span class="status010">审批中</span>
+                            <!-- class="orgTxt" -->
+                        </p>
+                        <p>
+                            <img src="images/icon_32x322.png">
+                            <span class="status020">待放款</span>
+                        </p>
+                        <p>
+                            <img src="images/icon_32x322.png">
+                            <span class="status030">还款中</span>
+                        </p>
+                        <p>
+                            <img src="images/icon_32x322.png">
+                            <span class="status040">已结清</span>
+                        </p>
+                        <p>
+                            <img src="images/icon_32x322.png">
+                            <span class="status050">已拒绝</span>
+                        </p>
+                        <p>
+                            <img src="images/icon_32x322.png">
+                            <span class="status060">已退回</span>
+                        </p>
+                        <p>
+                            <img src="images/icon_32x322.png">
+                            <span class="status070">平台拒绝</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="repayDetail">
+            <div class="cancelBtn">
+            </div>
+            <div class="repayTitle">
+                <span class="title">还款详情</span>
+                <p>
+                    借款总金额:<span class="totalMoney"></span>,共分<span class="totalTerm"></span>期
+                </p>
+            </div>
+            <div class="repayHead">
+                <ul>
+                    <li>还款期数</li>
+                    <li>应还本金</li>
+                    <li>应还利息</li>
+                    <li>应还总额</li>
+                </ul>
+            </div>
+            <div class="repayContent">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var pageObject;
+    var tremList = [];
+    $(document).ready(function () {
+        pageObject = JSON.parse(sessionStorage.curObject)
+        $(".paybackMoney").html(pageObject.amount.toFixed(2));
+        $(".driverSchool").html(pageObject.drivingSchoolName);
+        $(".appNo").html(pageObject.appNo);
+        $(".amountMoney").html(pageObject.finalAmount.toFixed(2));
+        $(".totalPeriod").html(pageObject.term)
+        // $(".perMonth").html(pageObject.termLmt);
+        var curStatus = pageObject.status;
+        $('.status' + curStatus).addClass("orgTxt");
+        $('.status' + curStatus).prev().attr('src', "images/icon_32x323.png");
+        $(".backFn").on("click", function () {
+            history.go(-1)
+        })
+        $(".queryDetail").on("click", function () {
+            $(".repayDetail").show();
+            showShade();
+            $(".shade_layer").css("display", "block");
+            $(".repayContent").empty();
+            // if (pageObject.status == "030" || pageObject.status == "040") {
+            //     $.ajax({
+            //         url: urlToken + 'cfss/loanApply/aps/aps/wx/queryRepaymentSchedule',
+            //         type: 'post',
+            //         contentType: "application/json;charset=UTF-8",
+            //         dataType: "json",
+            //         headers: {
+            //             Authorization: sessionStorage.token
+            //             //Authorization: "bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTcwODE2OTcyLCJhdXRob3JpdGllcyI6WyJjbGllbnQiXSwianRpIjoiNmMwOTIxNjYtZDkwNy00ZmU3LTgwMGYtOGVlODEwMWEwMjk0IiwiY2xpZW50X2lkIjoiaW1nIn0.hvlqaV93aVTbPjhgL9PDhG-IuhOWmnpwORvGgAxKwVtqfej0cwKZPCCaBe1pCf_fqbMA6pYkUizRsIrq3ZMhjWBLEZjTTQROPBuWR3A6nDHhWQrchyEelsuMPDo3xiYwdv6qR0toyVI1Sy3gW-SZ6LcIdjQfvG-NcDsnCmha-kkyjnR1-2XpixydMG91rNow2YLBK2_8PrufObnLpMHO4LRcc945Sa-yLtgc4kOlY4kXF7yhtbwLWxzuXidn_lmed7BtYroLebepgaK6k-J6QnvZ5lNr2WdxHPrLYbcbMu18r7wxuEqkAQ_d0hRESEvibnU8vPIh9C7AOyzz3pVF2A"
+            //         },
+            //         data: JSON.stringify({
+            //             contractNo: pageObject.contractNo
+            //         }),
+            //         success: function (res) {
+
+            //             if (res.resultCode == "1") {
+            //                 if (!!res.data.erong.payScheduleList) {
+            //                     tremList = res.data.erong.payScheduleList;
+            //                     var str = "";
+            //                     tremList.forEach(function (item) {
+            //                         str = "<ul>" +
+            //                             "<li>" + item.currentTerm + "</li>" +
+            //                             "<li>" + item.corpRepayment + "</li>" +
+            //                             "<li>" + item.inteRepayment + "</li>" +
+            //                             "<li>" + item.amountRepayment + "</li>" +
+            //                             "</ul>"
+            //                         $(".repayContent").append(str);
+            //                     });
+            //                     $(".totalTerm").html(pageObject.term);
+            //                     $(".totalMoney").html(res.data.erong.loanAmount);
+
+            //                 } else {
+            //                     new myMessage({
+            //                         content: "获取信息失败",
+            //                         timer: 2000
+            //                     });
+
+            //                 }
+            //             }
+            //         },
+
+            //         error: function (error) {
+
+            //         }
+            //     })
+            // } else {
+
+            $.ajax({
+                url: urlToken + 'cfss/loanApply/aps/aps/wx/queryRepayPlanTrial',
+                type: 'post',
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                headers: {
+                    Authorization: sessionStorage.token
+                    //Authorization: "bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTcwODE2OTcyLCJhdXRob3JpdGllcyI6WyJjbGllbnQiXSwianRpIjoiNmMwOTIxNjYtZDkwNy00ZmU3LTgwMGYtOGVlODEwMWEwMjk0IiwiY2xpZW50X2lkIjoiaW1nIn0.hvlqaV93aVTbPjhgL9PDhG-IuhOWmnpwORvGgAxKwVtqfej0cwKZPCCaBe1pCf_fqbMA6pYkUizRsIrq3ZMhjWBLEZjTTQROPBuWR3A6nDHhWQrchyEelsuMPDo3xiYwdv6qR0toyVI1Sy3gW-SZ6LcIdjQfvG-NcDsnCmha-kkyjnR1-2XpixydMG91rNow2YLBK2_8PrufObnLpMHO4LRcc945Sa-yLtgc4kOlY4kXF7yhtbwLWxzuXidn_lmed7BtYroLebepgaK6k-J6QnvZ5lNr2WdxHPrLYbcbMu18r7wxuEqkAQ_d0hRESEvibnU8vPIh9C7AOyzz3pVF2A"
+                },
+                data: JSON.stringify({
+                    contractNo: pageObject.contractNo,
+                    status: pageObject.status,
+                }),
+                success: function (res) {
+                    $(".shade_inside_layer").css("display", "none")
+                    if (res.resultCode == "1") {
+                        tremList = res.data;
+                        var str = "";
+                        tremList.forEach(function (item) {
+                            str = "<ul>" +
+                                "<li>" + item.currTerm + "</li>" +
+                                "<li>" + item.loanTermPrin + "</li>" +
+                                "<li>" + item.loanTermInt + "</li>" +
+                                "<li>" + item.currBal + "</li>" +
+                                "</ul>"
+                            $(".repayContent").append(str);
+                        });
+                        $(".totalTerm").html(pageObject.term);
+                        $(".totalMoney").html(pageObject.amount.toFixed(2));
+                    } else {
+                        new myMessage({
+                            content: "获取信息失败",
+                            timer: 2000
+                        });
+
+                    }
+                },
+
+                error: function (error) {
+
+                }
+            })
+
+        })
+        $(".cancelBtn").on("click", function () {
+            $(".repayDetail").hide();
+            $(".shade_layer").css("display", "none");
+        })
+        $(".protocol").on("click", function () {
+            showShade();
+            $.ajax({
+                url: urlToken + "erong-cfss-phss/loanInfo/getViewLink",
+                type: 'post',
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                headers: {
+                    Authorization: sessionStorage.token
+                    //Authorization: "bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTcwODE2OTcyLCJhdXRob3JpdGllcyI6WyJjbGllbnQiXSwianRpIjoiNmMwOTIxNjYtZDkwNy00ZmU3LTgwMGYtOGVlODEwMWEwMjk0IiwiY2xpZW50X2lkIjoiaW1nIn0.hvlqaV93aVTbPjhgL9PDhG-IuhOWmnpwORvGgAxKwVtqfej0cwKZPCCaBe1pCf_fqbMA6pYkUizRsIrq3ZMhjWBLEZjTTQROPBuWR3A6nDHhWQrchyEelsuMPDo3xiYwdv6qR0toyVI1Sy3gW-SZ6LcIdjQfvG-NcDsnCmha-kkyjnR1-2XpixydMG91rNow2YLBK2_8PrufObnLpMHO4LRcc945Sa-yLtgc4kOlY4kXF7yhtbwLWxzuXidn_lmed7BtYroLebepgaK6k-J6QnvZ5lNr2WdxHPrLYbcbMu18r7wxuEqkAQ_d0hRESEvibnU8vPIh9C7AOyzz3pVF2A"
+                },
+                data: JSON.stringify({
+                    appNo: pageObject.appNo
+                }),
+                success: function (res) {
+                    hideShade();
+                    if (res.resultCode == "1") {
+                        var url = res.data;
+                        window.location.href = url;
+                        // window.open(url)
+                    } else {
+                        new myMessage({
+                            content: res.errorDesc,
+                            timer: 2000
+                        });
+                    }
+                },
+                error: function (e) {
+                    hideShade();
+                }
+            })
+        })
+
+        function hideShade() {
+            $(".shade_inside_layer").css("display", "none");
+            $(".shade_layer").css("display", "none");
+        }
+
+        function showShade() {
+            $(".shade_inside_layer").css("display", "block");
+            $(".shade_layer").css("display", "block");
+        }
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+
+    <title>还款计划</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+
+    <div class="bar_nav">
+
+        <i>
+
+            <img src="images/icon_40x40_6@2x.png">
+
+        </i> 还款计划
+
+    </div>
+    <div class="shade_layer">
+
+    </div>
+    <div class="shade_inside_layer">
+        <img src="images/loading.gif">
+        <span>加载中, 请稍后...</span>
+    </div>
+    <div class="RepayInfo">
+
+        <div class="RepayBanner">
+
+            <div class="RepayMoney">
+
+                <p>应还金额（元）</p>
+
+                <h2>
+                    <span>0.00</span>
+                </h2>
+
+            </div>
+
+            <div class="RepayInfoList">
+
+                <p>待还款
+                    <span class="unpaidTerm">0</span>期</p>
+
+                <p>已逾期
+                    <span class="overdueTerm">0</span>期</p>
+
+                <p>已还款
+                    <span class="paidTerm">0</span>期</p>
+
+            </div>
+
+        </div>
+
+        <div class="RepayInfoBar">
+            <p>产品名称:
+                <span class="productName"></span>
+            </p>
+        </div>
+        <div class="RepayInfoBar">
+            <p>合同总金额:
+                <span class="loanAmount"></span>
+            </p>
+        </div>
+
+        <div class="RepayCont">
+
+            <div class="RepayTab clearfix">
+
+                <ul>
+
+                    <li id="erongTab" class="erong">大鹅好车</li>
+
+                    <li id="bankTab" class="bank">合作银行</li>
+
+                </ul>
+
+            </div>
+
+            <div class="RepayTitle">
+
+                <span></span>
+
+                <ul>
+
+                    <li>还款期数</li>
+
+                    <li>每期还(元)<img src="images/question.png" id="tisp2Btn"></li>
+
+                    <li>还款时间</li>
+
+                    <li>状态</li>
+
+                </ul>
+
+            </div>
+
+            <div class="RepayContList">
+
+                <div class="RepayContLi erong erongCont">
+
+                    <ul></ul>
+
+                </div>
+
+                <div class="RepayContLi bank bankCont">
+
+                    <ul></ul>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footBtn">提前结清借款</div>
+        <div class="footbar">
+            <span>立即还款</span>
+        </div>
+    </div>
+
+    <div class="carListDialog">
+        <div class="carListTitle">
+            <h2>选择优先支付方式</h2>
+            <p>优先使用所选支付方式付款，如付款失败将尝试</p>
+            <p>使用其他支付方式完成付款</p>
+        </div>
+        <div class="carListCont">
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <div class="payStatus3 tips1">
+        <div class="payStatus3Cont">
+            <div class="payStatusTxt">存在逾期期次，不允许提前结清，请先偿还逾期期次</div>
+            <div class="payStatusBtn">确定</div>
+        </div>
+    </div>
+
+    <div class="payStatus3 tips4">
+        <div class="payStatus4Cont">
+        </div>
+    </div>
+    <div class="payStatus3 tips2">
+        <div class="payStatus3Cont">
+            <div class="payStatusTxt">
+                <h2>还款金额</h2>含本金、利息及信息技术费等
+            </div>
+            <div class="payStatusBtn">确定</div>
+        </div>
+    </div>
+
+    <div class="payStatus3 tips3">
+        <div class="payStatus3Cont">
+            <div class="payStatusTxt">
+                <h2>还款金额</h2>含本金、利息及信息技术费等
+            </div>
+            <div class="payStatusBtn">确定</div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+
+<script type="text/javascript" src="js/conmm.js"></script>
+
+<script type="text/javascript" src="js/WechatPublic.js"></script>
+
+<script type="text/javascript" src="js/RepayInfoAjax.js"></script>
+
+<script type="text/javascript" src="js/math.min.js"></script>
+
+<script>
+    // 当前页面跳转上一页
+
+    $(".bar_nav i img").on('click', function() {
+
+        window.history.back(-1);
+
+    });
+</script>

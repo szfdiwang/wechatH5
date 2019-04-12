@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+
+    <title>自助查询</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/WechatPublic.js"></script>
+
+</head>
+
+
+
+<body id="bgf0">
+
+    <div class="bar_nav">
+
+        <i>
+
+            <img src="images/icon_40x40_6@2x.png">
+
+        </i> 自助查询
+
+    </div>
+
+    <div class="billingCont boxCont">
+
+        <div class="boxList onRepayList">
+
+            <img src="images/ico_1@2x.png">
+
+            <p>账单查询</p>
+
+        </div>
+
+        <div class="boxList paymentHistory">
+
+            <img src="images/ico_2@2x.png">
+
+            <p>还款记录</p>
+
+        </div>
+
+    </div>
+
+</body>
+
+
+
+</html>
+
+<script>
+    // 当前页面跳转上一页
+
+    $(".bar_nav i img").on('click', function() {
+
+        window.history.back(-1);
+
+    });
+</script>

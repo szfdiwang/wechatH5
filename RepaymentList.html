@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+
+    <meta name="viewport"
+        content="target-densitydpi=device-dpi,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+
+    <title>还款列表</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+
+    <script type="text/javascript" src="js/conmm.js"></script>
+
+    <script type="text/javascript" src="js/WechatPublic.js"></script>
+
+    <script type="text/javascript" src="js/RepayInfo.js"></script>
+
+</head>
+
+
+<body id="bgf0">
+    <div class="shade_layer">
+
+    </div>
+    <div class="shade_inside_layer">
+        <img src="images/loading.gif">
+        <span>加载中, 请稍后...</span>
+    </div>
+    <div class="bar_nav">
+        <i>
+            <!-- <img src="images/icon_40x40_6@2x.png"> -->
+        </i> 我的借款
+    </div>
+    <div class="new_banner">
+    </div>
+
+    <div class="borrowingCont cheECode" style="display: block;">
+    </div>
+</body>
+
+</html>
+
+<script>
+    window.onload = function () {
+        // 当前页面跳转上一页
+        $(".bar_nav i img").on('click', function () {
+            pushHistory(); //这个必须在文档加载时就触发，创建出来的新的history实体  
+            window.addEventListener("popstate", function (e) { //popstate 只有在history实体被改变时才会触发  
+                // alert("我监听到了浏览器的返回按钮事件啦"); //根据自己的需求实现自己的功能   
+                WeixinJSBridge.call('closeWindow');
+            }, false);
+
+            function pushHistory() {
+                var state = {
+                    title: "title",
+                    url: "#"
+                };
+                window.history.pushState(state, "title", "#");
+            }
+
+        });
+
+    }
+</script>

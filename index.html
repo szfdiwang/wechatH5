@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>90车e购</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/swiper-3.4.2.jquery.min.js"></script>
+    <script type="text/javascript" src="js/conmm.js"></script>
+    <script type="text/javascript" src="js/General-purpose.js"></script>
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .swiper-slide {
+            font-size: 18px;
+        }
+        
+        .swiper-pagination-bullet {
+            width: 20px;
+            border-radius: 10px;
+            height: 3px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #f08300;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner"><img src="images/icon_750x450_1@2x.png"></div>
+    <div class="bannerNav divBg"><img src="images/icon_680x96@2x.png"></div>
+    <div class="carCalculation divBg mgt20">
+        <div class="carTitle">金融方案测算，轻松购好车</div>
+        <div class="carculationInfo">
+            <ul>
+                <li>
+                    <span>新车全包价</span>
+                    <p><input type="text" placeholder="请输入价格" class="carPrice"></p>
+                    <i class="moneyImg"></i>
+                </li>
+                <li>
+                    <span>分期期限</span>
+                    <p>
+                        <select id="carMonth">
+                            <option value="请选择">请选择</option>
+                            <option value="48">48个月</option>
+                            <option value="36">36个月</option>
+                            <option value="24">24个月</option>
+                            <option value="12">12个月</option>
+                        </select>
+                    </p>
+                    <i class="moreImg"></i>
+                </li>
+                <li>
+                    <span>首付款</span>
+                    <p class="firstPrice">0.00万</p>
+                </li>
+                <li>
+                    <span>月供租金</span>
+                    <p class="monthAmount">0.00元</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hotCar divBg">
+        <div class="hotCarTitle carMoreList">
+            <p>热销车型优选</p>
+            <span>更多</span>
+        </div>
+        <div class="tabSlide">
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="carListCont">
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <div class="helpList divBg">
+        <div class="hotCarTitle">
+            <p>常见问题</p>
+            <span class="carWtMore">更多</span>
+        </div>
+        <div class="helpListCont">
+            <div class="listTitle">
+                <p>什么是大鹅好车90车e购?</p>
+                <span></span>
+            </div>
+            <div class="listCont">
+                <p>1）线上预约，客服人员会在24小时内与您联系并核实购车 需求等；</p>
+                <p>2）客服致电后，会安排对应分公司专属客户经理与您对接，提交申请资料，到店订车；</p>
+                <p>3）风控审核通过后，客户经理通知您缴纳首付款及保证金（如有）；</p>
+                <p>4）坐等提车，提车周期一般在一个月内；</p>
+                <p>5）按月支付租金：承租人需将足额月租按时存入绑定的银行卡内。</p>
+            </div>
+        </div>
+        <div class="helpListCont">
+            <div class="listTitle">
+                <p>在全国哪些地区有受理网点？</p>
+                <span></span>
+            </div>
+            <div class="listCont">
+                <p>1）线上预约，客服人员会在24小时内与您联系并核实购车 需求等；</p>
+                <p>2）客服致电后，会安排对应分公司专属客户经理与您对接，提交申请资料，到店订车；</p>
+                <p>3）风控审核通过后，客户经理通知您缴纳首付款及保证金（如有）；</p>
+                <p>4）坐等提车，提车周期一般在一个月内；</p>
+                <p>5）按月支付租金：承租人需将足额月租按时存入绑定的银行卡内。</p>
+            </div>
+        </div>
+        <div class="helpListCont">
+            <div class="listTitle">
+                <p>具体的业务流程是怎样的？</p>
+                <span></span>
+            </div>
+            <div class="listCont">
+                <p>1）线上预约，客服人员会在24小时内与您联系并核实购车 需求等；</p>
+                <p>2）客服致电后，会安排对应分公司专属客户经理与您对接，提交申请资料，到店订车；</p>
+                <p>3）风控审核通过后，客户经理通知您缴纳首付款及保证金（如有）；</p>
+                <p>4）坐等提车，提车周期一般在一个月内；</p>
+                <p>5）按月支付租金：承租人需将足额月租按时存入绑定的银行卡内。</p>
+            </div>
+        </div>
+        <div class="helpListCont">
+            <div class="listTitle">
+                <p>什么情况下需要缴纳保证金？</p>
+                <span></span>
+            </div>
+            <div class="listCont">
+                <p>1）线上预约，客服人员会在24小时内与您联系并核实购车 需求等；</p>
+                <p>2）客服致电后，会安排对应分公司专属客户经理与您对接，提交申请资料，到店订车；</p>
+                <p>3）风控审核通过后，客户经理通知您缴纳首付款及保证金（如有）；</p>
+                <p>4）坐等提车，提车周期一般在一个月内；</p>
+                <p>5）按月支付租金：承租人需将足额月租按时存入绑定的银行卡内。</p>
+            </div>
+        </div>
+        <div class="helpListCont">
+            <div class="listTitle">
+                <p>是否支持提前结清和过户？</p>
+                <span></span>
+            </div>
+            <div class="listCont">
+                <p>1）线上预约，客服人员会在24小时内与您联系并核实购车 需求等；</p>
+                <p>2）客服致电后，会安排对应分公司专属客户经理与您对接，提交申请资料，到店订车；</p>
+                <p>3）风控审核通过后，客户经理通知您缴纳首付款及保证金（如有）；</p>
+                <p>4）坐等提车，提车周期一般在一个月内；</p>
+                <p>5）按月支付租金：承租人需将足额月租按时存入绑定的银行卡内。</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="images/icon_196x50_@2x.png">
+        <p>鼎誉融资租赁（深圳）有限公司</p>
+        <p>客服热线：400-602-6622 | 工作时间：9:00 - 21:30</p>
+    </div>
+    <div class="smallProgramBtn divBg hrefH5html">
+        <a href="javascript:;">立即申请</a>
+    </div>
+    <div class="modaiCheck checkData1">
+        <div class="modaiCont">
+            <h1>新车全包价</h1>
+            <div class="modaiContInfo">包括：裸车价、税费、保险费、GPS费用、上牌 费，其中GPS费用固定为1500元。</div>
+            <div class="planningClose">我知道了</div>
+        </div>
+    </div>
+    <div class="modaImg">
+        <div class="modaDiv">
+            <img src="images/icon_690x1020@2x.png">
+            <span></span>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    getToken();
+
+    function getToken() {
+        // 获取网关token
+        $.ajax({
+            type: 'get',
+            headers: {
+                Authorization: "Basic ZXJvbmdfMTAwMDUwMDE6YjcxNDczNmFlZTJhNDY3MWJlNWM2YzllYTI3ZDJlYmI="
+            },
+            url: urlToken + "auth/oauth/token?grant_type=client_credentials",
+            dataType: 'JSON',
+            success: function(msg) {
+                msg = JSON.parse(msg);
+                token = "bearer " + msg.access_token;
+                sessionStorage.token = token;
+                fnTab();
+            },
+            error: function(msg) {
+                console.log(msg);
+            }
+        });
+    }
+
+    function fnTab() {
+        $.ajax({
+            type: "POST",
+            contentType: "application/json;charset=UTF-8",
+            url: urlJson + "erong-core-mode/mode/queryHotModelListDetail",
+            dataType: "JSON",
+            headers: {
+                Authorization: sessionStorage.token
+            },
+            data: JSON.stringify({}),
+            success: function(msg) {
+                msg = JSON.parse(msg);
+                if (msg.resultCode == "1") {
+                    // console.log(msg.data);
+                    var result = [];
+                    for (var i = 0, len = msg.data.length; i < len; i += 4) {
+                        result.push(msg.data.slice(i, i + 4));
+                    }
+                    // console.log(result);
+                    for (var j = 0; j < result.length; j++) {
+                        var swiperSlide = '<div class="swiper-slide swiperSlide' + j + '"></div>';
+                        $("#carListCont").append(swiperSlide);
+                        for (var k = 0; k < result[j].length; k++) {
+                            var tabList = '<div class="tabList" modelId = "' + result[j][k].modelId + '">' +
+                                '<img src="' + result[j][k].image + '">' +
+                                '<h2>' + result[j][k].modelName + '</h2>' +
+                                '<p>首付<span><i>' + (result[j][k].allinPrice / 10 / 10000).toFixed(2) + '</i>万</span> 月供 <em><i>' + result[j][k].monthPay + '</i>元</em> </p>' +
+                                '</div>';
+                            $(".swiperSlide" + j).append(tabList);
+                        }
+                    }
+
+                    var swiper = new Swiper('.swiper-container', {
+                        pagination: '.swiper-pagination',
+                        paginationClickable: true
+                    });
+
+
+                    $(".tabList").on('click', function() {
+                        sessionStorage.modelid = $(this).attr('modelid');
+                        sessionStorage.series_group_name = $(this).children('h2').html();
+                        sessionStorage.directPrice = ($(this).children('p').children('span').children('i').html()) * 10 * 10000;
+                        sessionStorage.monthPay = $(this).children('p').children('em').children('i').html()
+                        sessionStorage.loanTerm = 48;
+                        window.location.href = "carDetailed.html";
+                    });
+                } else {
+                    alert("请求车型列表失败！");
+                }
+            },
+            error: function(msg) {
+                console.log(msg);
+            }
+        })
+    }
+    $(".hrefH5html").on('click', function() {
+        window.location.href = "h5/carOwner1.html";
+    });
+    $(".bannerNav").on('click', function() {
+        $(".modaImg").show();
+    });
+    $(".modaImg span").on('click', function() {
+        $(".modaImg").hide();
+    });
+</script>

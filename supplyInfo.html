@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/conmm.js"></script>
+    <script type="text/javascript" src="js/WechatPublic.js"></script>
+
+</head>
+
+<body>
+    <div class="supplyBg">
+        <div class="shade_layer">
+
+        </div>
+        <div class="shade_inside_layer">
+            <img src="images/loading.gif">
+            <span>加载中, 请稍后...</span>
+        </div>
+        <div class="bar_nav">
+            <i>
+                <img src="images/icon_40x40_6@2x.png" onclick="backFn()">
+            </i>补充资料
+        </div>
+        <div class="backReason">
+            <div class="backReasonTitle">
+                <span>退回原因</span>
+            </div>
+            <div class="backReasonContent">
+                <!-- <p>1、您的营业证件已经过期，请重新提交证件；</p>
+                <p>2、您的社保复印件缺失，请重新提交资料；</p> -->
+            </div>
+        </div>
+        <div class="photoArea">
+            <input type="file" name="upload" id="upload" accept="image/*" capture="camera" style="display:none">
+            <div class="photoTitle">
+                <span>影像拍摄</span>
+            </div>
+            <div class="photoBox">
+                <div class="plusBox onlyOne"></div>
+            </div>
+            <div class="submitBtn" onclick="submitFn()">
+                <span>提交</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/upload.js"></script>
+
+</html>

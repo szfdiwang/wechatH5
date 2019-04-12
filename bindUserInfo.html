@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+
+    <title>页面跳转中</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+
+    <script type="text/javascript" src="js/conmm.js"></script>
+    <script type="text/javascript" src="js/WechatPublic.js"></script>
+</head>
+
+
+
+<body id="bgf0">
+    <div class="shell_we_show">
+        <div class="bar_nav">
+
+            <i>
+
+                <img src="images/icon_40x40_6@2x.png">
+
+            </i> 绑定微信
+
+        </div>
+
+        <div class="getUserWx">
+
+            <div class="WxTisp">
+
+                <img src="images/icon_180x180_1.png">
+
+                <p>该网页由大鹅好车开发，向其提供以下权限即可 继续操作。</p>
+
+            </div>
+
+            <div class="WxTipsInfo">
+
+                获取您的公开信息（昵称、头像等）
+
+            </div>
+
+            <div class="clickInfo">确认绑定</div>
+
+        </div>
+
+    </div>
+
+    <!-- <div class="dataJson" style="padding-top: 50px">123</div>
+
+    <input type="button" value="点击获取" id="clickInfo"> -->
+
+</body>
+
+
+
+</html>
+
+<script>
+    var url = window.location.search;
+
+    var request = new Object();
+
+    if (url.indexOf("?") != -1) {
+
+        var str = url.substr(1);
+
+        var strs = str.split("&");
+
+        for (var i = 0; i < strs.length; i++) {
+
+            request[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+
+        }
+
+    }
+
+    // alert(request['code']);
+
+    var opCode = request['code'];
+
+    getUserToken();
+
+
+    $(".clickInfo").click(function () {
+        getUserToken();
+    })
+
+    function getUserToken() {
+        $.ajax({
+            type: 'get',
+            headers: {
+                Authorization: "Basic ZXJvbmdfMTAwMDQwMDFfMDE6NWU0YTU0MDA4NWU1NGU0Mzk5ZDk2ODU3YTEwNWQ1ODE="
+                // Authorization: "Basic aW1nOmRjMTM3OTJhOTQ2YzQ0N2RhNzVmODJhYjQ0NzI4YTZh"
+
+            },
+            url: urlToken + "auth/oauth/token?grant_type=client_credentials",
+            dataType: 'JSON',
+            success: function (msg) {
+                msg = JSON.parse(msg);
+                token = "bearer " + msg.access_token;
+                sessionStorage.token = token;
+                $.ajax({
+                    //url: 'http://192.168.11.59:9091/wechat/getUserInfo',
+                    url: urlToken + '/erong-cfss-wechat/wechat/getUserInfo',
+                    type: 'post',
+                    headers: {
+                        Authorization: sessionStorage.token
+                    },
+                    async: true,
+                    data: {
+                        "wxType": "daehaoche",
+                        "code": opCode + ""
+                    },
+                    dataType: "json",
+                    success: function (msg) {
+                        if (msg.resultCode == "1") {
+                            var openId = msg.data.openId;
+                            sessionStorage.openId = openId;
+                            if (msg.data.customerId != "") {
+                                window.location.href = "RepaymentList.html";
+                            } else {
+                                window.location.href = "bindAccount.html";
+                            }
+                        }
+                    },
+                    error: function (msg) {
+                        alert(msg);
+                    }
+                });
+            },
+            error: function (msg) {
+                alert(JSON.stringify(msg));
+            }
+        });
+
+
+    }
+</script>
